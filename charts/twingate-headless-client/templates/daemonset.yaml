@@ -32,14 +32,18 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           
-          # livenessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: http
-          # readinessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: http
+          livenessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - twingate status | grep -q 'online' && exit 0 || exit 1
+          readinessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - twingate status | grep -q 'online' && exit 0 || exit 1
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
