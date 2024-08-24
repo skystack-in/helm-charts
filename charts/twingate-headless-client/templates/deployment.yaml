@@ -56,6 +56,9 @@ spec:
             - name: {{ .name }}
               value: {{ .value }}
           {{- end }}
+      hostNetwork: true
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
