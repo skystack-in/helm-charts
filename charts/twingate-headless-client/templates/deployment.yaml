@@ -48,9 +48,9 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          volumeDevices:
-            - devicePath: /dev/net/tun
-              name: mydevice0
+          volumeMounts:
+            - name: mydevice0
+              mountPath: /dev/net/tun
           env:          
               {{- range .Values.env }}
             - name: {{ .name }}
@@ -72,7 +72,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}  
       volumes:
-        - hostPath:
-            path: /dev/net/tun
-          name: mydevice0
+        - name: mydevice0
+          hostPath:
+            path: /dev/net/tun          
 {{- end }}
