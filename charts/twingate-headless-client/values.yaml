@@ -28,10 +28,11 @@ podAnnotations: {}
 podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
+securityContext:
+  capabilities:
+    add:
+    - NET_ADMIN
+  privileged: true
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
@@ -70,12 +71,23 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-autoscaling:
+daemonset:
   enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
+
+deployment:
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 100
+    targetCPUUtilizationPercentage: 80
+    # targetMemoryUtilizationPercentage: 80
+
+# Insert the SERVICE_KEY as a json string
+env:          
+ - name: "SERVICE_KEY"
+   value: ""
+ - name: "ENABLE_PORT_FORWARDING"
+   value: "false"
 
 nodeSelector: {}
 

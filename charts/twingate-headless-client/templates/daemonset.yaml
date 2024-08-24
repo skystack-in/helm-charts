@@ -1,14 +1,11 @@
-{{- if not .Values.daemonset.enabled -}}
+{{- if .Values.daemonset.enabled -}}
 apiVersion: apps/v1
-kind: Deployment
+kind: Daemonset
 metadata:
   name: {{ include "twingate-headless-client.fullname" . }}
   labels:
     {{- include "twingate-headless-client.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.deployment.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "twingate-headless-client.selectorLabels" . | nindent 6 }}
