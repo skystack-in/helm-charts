@@ -54,7 +54,7 @@ spec:
           env:          
               {{- range .Values.env }}
             - name: {{ .name }}
-              value: {{ .value }}
+              value: {{ .value | quote }}
           {{- end }}
       hostNetwork: true
       restartPolicy: Always

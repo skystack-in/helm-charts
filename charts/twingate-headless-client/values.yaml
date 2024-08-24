@@ -85,9 +85,10 @@ deployment:
 # Insert the SERVICE_KEY as a json string
 env:          
  - name: "SERVICE_KEY"
-   value: ""
+   value: |-
+    
  - name: "ENABLE_PORT_FORWARDING"
-   value: "false"
+   value: false
 
 nodeSelector: {}
 
