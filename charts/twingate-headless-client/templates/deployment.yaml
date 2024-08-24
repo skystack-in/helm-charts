@@ -12,6 +12,8 @@ spec:
   selector:
     matchLabels:
       {{- include "twingate-headless-client.selectorLabels" . | nindent 6 }}
+  strategy:
+    type: Recreate
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -41,12 +43,16 @@ spec:
                 - /bin/sh
                 - -c
                 - twingate status | grep -q 'online' && exit 0 || exit 1
+            initialDelaySeconds: 5
+            periodSeconds: 3
           readinessProbe:
             exec:
               command:
                 - /bin/sh
                 - -c
                 - twingate status | grep -q 'online' && exit 0 || exit 1
+            initialDelaySeconds: 5
+            periodSeconds: 3
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
