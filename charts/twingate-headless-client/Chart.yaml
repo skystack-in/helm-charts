@@ -1,6 +1,8 @@
 apiVersion: v2
 name: twingate-headless-client
 description: A Helm chart for twingate-headless-client
+home: https://www.twingate.com
+icon: https://www.twingate.com/twingate.png
 
 # A chart can be either an 'application' or a 'library' chart.
 #
