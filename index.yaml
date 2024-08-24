@@ -3,6 +3,21 @@ entries:
   twingate-headless-client:
   - apiVersion: v2
     appVersion: 0.157.1
+    created: "2024-08-24T02:09:20.755747144Z"
+    description: A Helm chart for twingate-headless-client
+    digest: 453d7d9078c1370e59b831ed45a419bdcfb86009ede6f1b1986bf0a139016f97
+    home: https://www.twingate.com
+    icon: https://www.twingate.com/twingate.png
+    maintainers:
+    - email: ajagnanan@users.noreply.github.com
+      name: ajagnanan
+    name: twingate-headless-client
+    type: application
+    urls:
+    - https://github.com/lookinglass-in/helm-charts/releases/download/twingate-headless-client-0.0.7/twingate-headless-client-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
+    appVersion: 0.157.1
     created: "2024-08-24T01:53:15.648173351Z"
     description: A Helm chart for twingate-headless-client
     digest: 9eebffb3f9d06b8b6d6f9c9e0f70d50d09b6be72b08b74486583bb2b4bcea9f2
@@ -85,4 +100,4 @@ entries:
     urls:
     - https://github.com/lookinglass-in/helm-charts/releases/download/twingate-headless-client-0.0.1/twingate-headless-client-0.0.1.tgz
     version: 0.0.1
-generated: "2024-08-24T01:53:15.648201234Z"
+generated: "2024-08-24T02:09:20.755791386Z"
