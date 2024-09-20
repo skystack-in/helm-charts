@@ -1,0 +1,12 @@
+{{- if .Values.configmap.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "database-backup-s3.fullname" . }}
+  labels:
+    {{- include "database-backup-s3.labels" . | nindent 4 }}
+data: 
+  {{- range $name, $config := .Values.configmap.values }}
+  {{ $name }}: {{ $config | quote }}
+  {{- end }}
+{{- end }}
