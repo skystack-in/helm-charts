@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "database-backup-s3.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "database-backup-s3.selectorLabels" . | nindent 6 }}
