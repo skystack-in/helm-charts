@@ -3,6 +3,22 @@ entries:
   database-backup-s3:
   - apiVersion: v2
     appVersion: "3.18"
+    created: "2024-09-21T06:00:57.424698299Z"
+    description: A Docker container to periodically backup supported databases to
+      an S3 compatible object storage.
+    digest: 062d937da8d26a3f223cd9314d8d822e1d7659f7203e4a97bae37630814f6f12
+    home: https://github.com/lookinglass-in/database-backup-s3
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/856px-Amazon-S3-Logo.svg.png
+    maintainers:
+    - email: ajagnanan@users.noreply.github.com
+      name: ajagnanan
+    name: database-backup-s3
+    type: application
+    urls:
+    - https://github.com/lookinglass-in/helm-charts/releases/download/database-backup-s3-0.0.5/database-backup-s3-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
+    appVersion: "3.18"
     created: "2024-09-21T03:00:12.908268624Z"
     description: A Docker container to periodically backup supported databases to
       an S3 compatible object storage.
@@ -255,4 +271,4 @@ entries:
     urls:
     - https://github.com/lookinglass-in/helm-charts/releases/download/twingate-headless-client-0.0.1/twingate-headless-client-0.0.1.tgz
     version: 0.0.1
-generated: "2024-09-21T03:00:12.908316914Z"
+generated: "2024-09-21T06:00:57.424730389Z"
