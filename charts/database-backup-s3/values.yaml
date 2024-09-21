@@ -89,6 +89,7 @@ affinity: {}
 
 configmap:
   enabled: true
+  existingConfigMap: ""
   values:
     SCHEDULE: '@weekly'     # optional
     BACKUP_KEEP_DAYS: 7     # optional
@@ -107,9 +108,15 @@ configmap:
     
 secrets:
   enabled: true
+  existingSecret: ""
   values:
     PASSPHRASE: passphrase
     S3_ACCESS_KEY_ID: key
     S3_SECRET_ACCESS_KEY: secret
     DATABASE_USER: user
     DATABASE_PASSWORD: password
+
+action:
+  enabled: false
+  type: backup # restore
+  restartPolicy: Never # OnFailure

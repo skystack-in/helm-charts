@@ -1,15 +1,11 @@
-{{- if not .Values.action.enabled -}}
-apiVersion: apps/v1
-kind: Deployment
+{{- if .Values.action.enabled -}}
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: {{ include "database-backup-s3.fullname" . }}
   labels:
     {{- include "database-backup-s3.labels" . | nindent 4 }}
 spec:
-  replicas: {{ .Values.replicaCount }}
-  selector:
-    matchLabels:
-      {{- include "database-backup-s3.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -29,16 +25,13 @@ spec:
       serviceAccountName: {{ include "database-backup-s3.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      restartPolicy: "{{ .Values.action.restartPolicy }}"
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          livenessProbe:
-            {{- toYaml .Values.livenessProbe | nindent 12 }}
-          readinessProbe:
-            {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if and .Values.configmap.enabled .Values.secrets.enabled }}
@@ -56,9 +49,17 @@ spec:
           - secretRef:
               name: {{ .Values.secrets.existingSecret | default (include "database-backup-s3.fullname" .) }}
           {{- end }}
+          env:
+          - name: SCHEDULE
+            value: ''
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
+          {{- end }}          
+          {{- if eq .Values.action.type "restore" }}
+          command: 
+          - sh
+          - restore.sh
           {{- end }}
       {{- with .Values.volumes }}
       volumes:
