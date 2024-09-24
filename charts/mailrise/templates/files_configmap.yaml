@@ -6,5 +6,6 @@ metadata:
     {{- include "mailrise.labels" . | nindent 4 }}
 data: 
   {{- range $name, $config := .Values.filesConfigmap.values }}
-  {{ $name }}: {{ tpl $config $ | nindent 4 }}
+  {{ $name }}: |
+    {{ tpl $config $ | nindent 4 }}
   {{- end }}
