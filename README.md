@@ -1,20 +1,17 @@
-# Nextcloud Helm Charts
+# Lookinglass Helm Charts
 
-[Helm](https://helm.sh) repo for different charts related to Nextcloud which can be installed on [Kubernetes](https://kubernetes.io)
+[Helm](https://helm.sh) must be installed to use the charts.
+Please refer to Helm's [documentation](https://helm.sh/docs/) to get started.
 
 ### Add Helm repository
 
 To install the repo just run:
 
 ```bash
-helm repo add nextcloud https://nextcloud.github.io/helm/
+helm repo add lookinglass-in https://lookinglass-in.github.io/helm-charts
 helm repo update
 ```
 
 ### Helm Charts
 
-* [nextcloud](https://nextcloud.github.io/helm/)
-
-  ```bash
-  helm install my-release nextcloud/nextcloud
-  ```
+You can then run `helm search repo lookinglass-in` to see the charts.
