@@ -66,6 +66,7 @@ spec:
         - configMap:
             defaultMode: 420
             name: "{{ include "mailrise.fullname" . }}-files"
+          name: "{{ include "mailrise.fullname" . }}-files"
       {{- with .Values.volumes }}      
         {{- toYaml . | nindent 8 }}
       {{- end }}
