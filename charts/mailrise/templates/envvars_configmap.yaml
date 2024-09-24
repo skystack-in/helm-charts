@@ -1,0 +1,12 @@
+{{- if and (.Values.envVarsConfigmap.enabled) (not .Values.envVarsConfigmap.existingConfigMap) }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ include "mailrise.fullname" . }}-envvars"
+  labels:
+    {{- include "mailrise.labels" . | nindent 4 }}
+data: 
+  {{- range $name, $config := .Values.envVarsConfigmap.values }}
+  {{ $name }}: {{ $config | quote }}
+  {{- end }}
+{{- end }}

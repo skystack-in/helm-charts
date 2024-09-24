@@ -19,10 +19,9 @@ You can then run `helm search repo lookinglass-in` to see the charts.
 
 ## Contributing
 
-The source code of all Lookinglass Helm charts can be found on GitHub: https://github.com/lookinglass-in/helm-charts/charts
+The source code of all Lookinglass Helm charts can be found on GitHub: [https://github.com/lookinglass-in/helm-charts/tree/main/charts](https://github.com/lookinglass-in/helm-charts/tree/main/charts).
 
 ## License
 
 <!-- Keep full URL links to repo files because this README syncs from main to gh-pages.  -->
 [Apache 2.0 License](https://github.com/lookinglass-in/helm-charts/blob/main/LICENSE).
-
