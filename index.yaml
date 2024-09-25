@@ -116,6 +116,21 @@ entries:
   mailrise:
   - apiVersion: v2
     appVersion: 1.4.0
+    created: "2024-09-25T03:51:49.254922364Z"
+    description: An SMTP gateway for Apprise notifications.
+    digest: cb43cdfe79d4ff44d5c7be949985d54b120665ba5ab591fb9134b751581feb3e
+    home: https://github.com/YoRyan/mailrise
+    icon: https://raw.githubusercontent.com/lookinglass-in/helm-charts/main/logos/mailrise-logo.png
+    maintainers:
+    - email: ajagnanan@users.noreply.github.com
+      name: ajagnanan
+    name: mailrise
+    type: application
+    urls:
+    - https://github.com/lookinglass-in/helm-charts/releases/download/mailrise-0.0.6/mailrise-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 1.4.0
     created: "2024-09-25T02:20:48.403433797Z"
     description: An SMTP gateway for Apprise notifications.
     digest: 2894b85fa9548077c1acec8ac8c8fd15db3ec354659f76015dee9ab9317be260
@@ -379,4 +394,4 @@ entries:
     urls:
     - https://github.com/lookinglass-in/helm-charts/releases/download/twingate-headless-client-0.0.1/twingate-headless-client-0.0.1.tgz
     version: 0.0.1
-generated: "2024-09-25T02:20:48.403500001Z"
+generated: "2024-09-25T03:51:49.254992585Z"
