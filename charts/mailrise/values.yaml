@@ -37,13 +37,13 @@ image:
   repository: yoryan/mailrise
   tag: ''
 imagePullSecrets: []
-livenessProbe: {}
+livenessProbe: ''
 nameOverride: ''
 nodeSelector: {}
 podAnnotations: {}
 podLabels: {}
 podSecurityContext: {}
-readinessProbe: {}
+readinessProbe: ''
 replicaCount: 1
 resources: {}
 secrets:
@@ -61,3 +61,4 @@ serviceAccount:
 tolerations: []
 volumeMounts: []
 volumes: []
+verboseMode: true
