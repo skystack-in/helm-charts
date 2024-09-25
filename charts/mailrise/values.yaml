@@ -53,6 +53,10 @@ secrets:
     SMTP_PASSWORD: changeme
     SMTP_USERNAME: root
 securityContext: {}
+service:
+  type: NodePort
+  port: 8025
+  nodePort: 30825
 serviceAccount:
   annotations: {}
   automount: true

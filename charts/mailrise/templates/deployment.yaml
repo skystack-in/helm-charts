@@ -48,7 +48,9 @@ spec:
           {{- if .Values.readinessProbe }}
           readinessProbe:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
-          {{- end }} 
+          {{- end }}
+          ports:
+          - containerPort: 8025
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if and .Values.envVarsConfigmap.enabled .Values.secrets.enabled }}
