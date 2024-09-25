@@ -3,6 +3,22 @@ entries:
   database-backup-s3:
   - apiVersion: v2
     appVersion: "3.18"
+    created: "2024-09-25T22:59:46.128370619Z"
+    description: A Docker container to periodically backup supported databases to
+      an S3 compatible object storage.
+    digest: 7a9b0890cc7c1b9ccd65ea64c63f137e4eaed412a43f2fcf67a44906b7a111c8
+    home: https://github.com/lookinglass-in/database-backup-s3
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/856px-Amazon-S3-Logo.svg.png
+    maintainers:
+    - email: ajagnanan@users.noreply.github.com
+      name: ajagnanan
+    name: database-backup-s3
+    type: application
+    urls:
+    - https://github.com/lookinglass-in/helm-charts/releases/download/database-backup-s3-0.0.10/database-backup-s3-0.0.10.tgz
+    version: 0.0.10
+  - apiVersion: v2
+    appVersion: "3.18"
     created: "2024-09-25T22:52:58.574388711Z"
     description: A Docker container to periodically backup supported databases to
       an S3 compatible object storage.
@@ -148,6 +164,21 @@ entries:
   mailrise:
   - apiVersion: v2
     appVersion: 1.4.0
+    created: "2024-09-25T22:59:46.248365051Z"
+    description: An SMTP gateway for Apprise notifications.
+    digest: 6d7077f1bb623128a6137e5e1d22c9e4bf9445b6d18e6690f1d4bb452a59ee6b
+    home: https://github.com/YoRyan/mailrise
+    icon: https://raw.githubusercontent.com/lookinglass-in/helm-charts/main/logos/mailrise-logo.png
+    maintainers:
+    - email: ajagnanan@users.noreply.github.com
+      name: ajagnanan
+    name: mailrise
+    type: application
+    urls:
+    - https://github.com/lookinglass-in/helm-charts/releases/download/mailrise-0.0.9/mailrise-0.0.9.tgz
+    version: 0.0.9
+  - apiVersion: v2
+    appVersion: 1.4.0
     created: "2024-09-25T22:52:58.725408481Z"
     description: An SMTP gateway for Apprise notifications.
     digest: 2e422d000a44b35d2231b8ba1aab2a56835efb2b1954d4b16ee4e231f1abf6e6
@@ -267,6 +298,21 @@ entries:
     - https://github.com/lookinglass-in/helm-charts/releases/download/mailrise-0.0.1/mailrise-0.0.1.tgz
     version: 0.0.1
   twingate-headless-client:
+  - apiVersion: v2
+    appVersion: 0.157.1
+    created: "2024-09-25T22:59:46.390854122Z"
+    description: A Helm chart for twingate-headless-client
+    digest: 093bdb08cd225ae1af98524abd77a807c5c823ac7980d53b9e81e41858c3928d
+    home: https://www.twingate.com
+    icon: https://www.twingate.com/twingate.png
+    maintainers:
+    - email: ajagnanan@users.noreply.github.com
+      name: ajagnanan
+    name: twingate-headless-client
+    type: application
+    urls:
+    - https://github.com/lookinglass-in/helm-charts/releases/download/twingate-headless-client-0.0.15/twingate-headless-client-0.0.15.tgz
+    version: 0.0.15
   - apiVersion: v2
     appVersion: 0.157.1
     created: "2024-09-25T22:52:58.883292491Z"
@@ -471,4 +517,4 @@ entries:
     urls:
     - https://github.com/lookinglass-in/helm-charts/releases/download/twingate-headless-client-0.0.1/twingate-headless-client-0.0.1.tgz
     version: 0.0.1
-generated: "2024-09-25T22:52:58.88351185Z"
+generated: "2024-09-25T22:59:46.391026604Z"
