@@ -24,6 +24,12 @@ jobs:
         with:
           version: v3.14.0
 
+      - name: Run helm-docs
+        uses: losisin/helm-docs-github-action@v1
+        with:
+          chart-search-root: ./charts
+          template-files: ./README.md.gotmpl
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
         env:
