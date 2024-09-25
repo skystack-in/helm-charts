@@ -3,22 +3,21 @@ envVarsConfigmap:
   enabled: true
   existingConfigMap: ''
   values:
-    MAILRISE_DISCORD_DEFAULT_URI: discord://WEBHOOK_ID/WEBHOOK_TOKEN
+    TLS_MODE: "OFF"
 filesConfigmap:
   enabled: true
   existingConfigMap: ''
   values:
     mailrise.conf: |
-      #tls:
-      #  mode: starttls
+      tls:
+         mode: !env_var TLS_MODE
       #  certfile: /path/to/certificate.pem
       #  keyfile: /path/to/privatekey.pem
 
       smtp:
-       auth:
-         basic:
-           username: !env_var SMTP_USERNAME
-           AzureDiamond: !env_var SMTP_PASSWORD
+        auth:
+          basic:
+            !env_var SMTP_USERNAME: !env_var SMTP_PASSWORD
 
       configs: 
         # Wildcard targets are evaluated in the order they appear in the
@@ -30,7 +29,7 @@ filesConfigmap:
         #
         "*@*":
           urls:
-            - !env_var MAILRISE_DISCORD_DEFAULT_URI
+            - !env_var MAILRISE_SLACK_DEFAULT_URI
 fullnameOverride: ''
 image:
   pullPolicy: IfNotPresent
@@ -51,18 +50,19 @@ secrets:
   existingSecret: ''
   values:
     SMTP_PASSWORD: changeme
-    SMTP_USERNAME: root
+    SMTP_USERNAME: username
+    MAILRISE_SLACK_DEFAULT_URI: slack://T02FUKG2E/B07NX99HFPC/RG6huWnBGEZ0E2NMB0jb02V8/#general
 securityContext: {}
 service:
-  type: NodePort
-  port: 8025
   nodePort: 30825
+  port: 8025
+  type: NodePort
 serviceAccount:
   annotations: {}
   automount: true
   create: false
   name: ''
 tolerations: []
+verboseMode: false
 volumeMounts: []
 volumes: []
-verboseMode: true
