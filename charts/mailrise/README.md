@@ -2,7 +2,7 @@
 
 An SMTP gateway for Apprise notifications.
 
-![Version: 0.0.8](https://img.shields.io/badge/Version-0.0.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.4.0](https://img.shields.io/badge/AppVersion-1.4.0-informational?style=flat-square)
+![Version: 0.0.9](https://img.shields.io/badge/Version-0.0.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.4.0](https://img.shields.io/badge/AppVersion-1.4.0-informational?style=flat-square)
 
 ## Additional Information
 
@@ -22,8 +22,8 @@ An SMTP gateway for Apprise notifications.
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm repo add foo-bar http://charts.foo-bar.com
-$ helm install my-release foo-bar/mailrise
+$ helm repo add lookinglass-in https://lookinglass-in.github.io/helm-charts
+$ helm install my-release lookinglass-in/mailrise
 ```
 
 ## Values

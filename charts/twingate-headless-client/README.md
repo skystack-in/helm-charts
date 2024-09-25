@@ -2,7 +2,7 @@
 
 A Helm chart for twingate-headless-client
 
-![Version: 0.0.14](https://img.shields.io/badge/Version-0.0.14-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.157.1](https://img.shields.io/badge/AppVersion-0.157.1-informational?style=flat-square)
+![Version: 0.0.15](https://img.shields.io/badge/Version-0.0.15-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.157.1](https://img.shields.io/badge/AppVersion-0.157.1-informational?style=flat-square)
 
 ## Additional Information
 
@@ -22,8 +22,8 @@ A Helm chart for twingate-headless-client
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm repo add foo-bar http://charts.foo-bar.com
-$ helm install my-release foo-bar/twingate-headless-client
+$ helm repo add lookinglass-in https://lookinglass-in.github.io/helm-charts
+$ helm install my-release lookinglass-in/twingate-headless-client
 ```
 
 ## Values

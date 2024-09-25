@@ -2,7 +2,7 @@
 
 A Docker container to periodically backup supported databases to an S3 compatible object storage.
 
-![Version: 0.0.9](https://img.shields.io/badge/Version-0.0.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.18](https://img.shields.io/badge/AppVersion-3.18-informational?style=flat-square)
+![Version: 0.0.10](https://img.shields.io/badge/Version-0.0.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.18](https://img.shields.io/badge/AppVersion-3.18-informational?style=flat-square)
 
 ## Additional Information
 
@@ -22,8 +22,8 @@ A Docker container to periodically backup supported databases to an S3 compatibl
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm repo add foo-bar http://charts.foo-bar.com
-$ helm install my-release foo-bar/database-backup-s3
+$ helm repo add lookinglass-in https://lookinglass-in.github.io/helm-charts
+$ helm install my-release lookinglass-in/database-backup-s3
 ```
 
 ## Values
