@@ -1,0 +1,18 @@
+name: helm-charts
+id: ari:cloud:compass:f58d2f6d-83ec-40f3-89df-b98d8dd82ff6:component/81f05823-1da1-4231-99e2-ba254fea6d7d/951709e6-4e31-4091-b49d-7477589f698c
+description: A set of Helm charts managed by fqd.name.
+configVersion: 1
+typeId: LIBRARY
+ownerId: ari:cloud:identity::team/afb7dc0b-e83b-4937-906f-d70b2d82de45
+fields:
+  tier: 4
+links:
+  - name: null
+    type: REPOSITORY
+    url: https://github.com/skystack-in/helm-charts
+relationships:
+  DEPENDS_ON: []
+labels:
+  - language:smarty
+  - source:github
+customFields: null
