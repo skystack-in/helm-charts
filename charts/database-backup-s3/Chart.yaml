@@ -1,7 +1,7 @@
 apiVersion: v2
 name: database-backup-s3
 description: A Docker container to periodically backup supported databases to an S3 compatible object storage.
-home: https://github.com/lookinglass-in/database-backup-s3
+home: https://github.com/skystack-in/database-backup-s3
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/856px-Amazon-S3-Logo.svg.png
 
 # A chart can be either an 'application' or a 'library' chart.
@@ -17,7 +17,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.0.11
+version: 0.0.12
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
