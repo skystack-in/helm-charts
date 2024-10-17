@@ -1,0 +1,12 @@
+{{- if and (.Values.switchblade.configmap.enabled) (not .Values.switchblade.configmap.existingConfigMap) }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "switchblade.fullname" . }}
+  labels:
+    {{- include "switchblade.labels" . | nindent 4 }}
+data: 
+  {{- range $name, $config := .Values.switchblade.configmap.values }}
+  {{ $name }}: {{ $config | quote }}
+  {{- end }}
+{{- end }}

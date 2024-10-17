@@ -1,0 +1,105 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "switchblade.fullname" . }}
+  labels:
+    {{- include "switchblade.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "switchblade.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "switchblade.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "switchblade.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.switchblade.image.repository }}:{{ .Values.switchblade.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.switchblade.image.pullPolicy }}
+          ports:
+            - name: api
+              containerPort: {{ .Values.service.apiPort }}
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.switchblade.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.switchblade.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- if and .Values.switchblade.configmap.enabled .Values.switchblade.secrets.enabled }}
+          envFrom:
+          - configMapRef:
+              name: {{ .Values.switchblade.configmap.existingConfigMap | default (include "switchblade.fullname" .) }}
+          - secretRef:
+              name: {{ .Values.switchblade.secrets.existingSecret | default (include "switchblade.fullname" .) }}
+          {{- else if .Values.switchblade.configmap.enabled }}
+          envFrom:
+          - configMapRef:
+              name: {{ .Values.switchblade.configmap.existingConfigMap | default (include "switchblade.fullname" .) }}
+          {{- else if .Values.switchblade.secrets.enabled }}
+          envFrom:
+          - secretRef:
+              name: {{ .Values.switchblade.secrets.existingSecret | default (include "switchblade.fullname" .) }}
+          {{- end }}
+          {{- with .Values.switchblade.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+        - name: {{ .Chart.Name }}-ui
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.switchblade_ui.image.repository }}:{{ .Values.switchblade_ui.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.switchblade_ui.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.httpPort }}
+              protocol: TCP
+          livenessProbe:
+            {{- toYaml .Values.switchblade_ui.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.switchblade_ui.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:          
+            {{- range $key, $value := .Values.switchblade_ui.env }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+          {{- with .Values.switchblade_ui.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.volumes }}
+      volumes:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

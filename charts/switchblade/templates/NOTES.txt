@@ -1,0 +1,1 @@
+Application installed in {{ .Release.Namespace }} {{ include "switchblade.fullname" . }}
