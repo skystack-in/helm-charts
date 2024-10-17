@@ -359,6 +359,22 @@ entries:
     urls:
     - https://github.com/lookinglass-in/helm-charts/releases/download/mailrise-0.0.1/mailrise-0.0.1.tgz
     version: 0.0.1
+  switchblade:
+  - apiVersion: v2
+    appVersion: master
+    created: "2024-10-17T07:09:35.384267549Z"
+    description: A Docker container to host and publish IOS shortcuts.
+    digest: 9d5301d5b2116e99db6a00db25f6a8478d1ca77d2c3cbb87eaf193c3794450b0
+    home: https://github.com/skystack-in/switchblade
+    icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-cO_Uadh85Jl-yXUMxyMLHVDvxKeFoYmyQ&s
+    maintainers:
+    - email: ajagnanan@users.noreply.github.com
+      name: ajagnanan
+    name: switchblade
+    type: application
+    urls:
+    - https://github.com/skystack-in/helm-charts/releases/download/switchblade-0.0.1/switchblade-0.0.1.tgz
+    version: 0.0.1
   twingate-headless-client:
   - apiVersion: v2
     appVersion: 0.157.1
@@ -609,4 +625,4 @@ entries:
     urls:
     - https://github.com/lookinglass-in/helm-charts/releases/download/twingate-headless-client-0.0.1/twingate-headless-client-0.0.1.tgz
     version: 0.0.1
-generated: "2024-10-01T05:50:41.829915292Z"
+generated: "2024-10-17T07:09:35.384357415Z"
