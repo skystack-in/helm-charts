@@ -362,6 +362,21 @@ entries:
   switchblade:
   - apiVersion: v2
     appVersion: master
+    created: "2024-10-17T13:09:01.650226759Z"
+    description: A Docker container to host and publish IOS shortcuts.
+    digest: 17e3e18ded370941051938138ebf159ab0031190f9b329ae19a6d513f0eeb416
+    home: https://github.com/skystack-in/switchblade
+    icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-cO_Uadh85Jl-yXUMxyMLHVDvxKeFoYmyQ&s
+    maintainers:
+    - email: ajagnanan@users.noreply.github.com
+      name: ajagnanan
+    name: switchblade
+    type: application
+    urls:
+    - https://github.com/skystack-in/helm-charts/releases/download/switchblade-0.0.3/switchblade-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: master
     created: "2024-10-17T12:49:58.844032138Z"
     description: A Docker container to host and publish IOS shortcuts.
     digest: 608cf2863b0437f240af65f6539e79d32aa7ef2a44f89b62686ece01755ef0be
@@ -640,4 +655,4 @@ entries:
     urls:
     - https://github.com/lookinglass-in/helm-charts/releases/download/twingate-headless-client-0.0.1/twingate-headless-client-0.0.1.tgz
     version: 0.0.1
-generated: "2024-10-17T12:49:58.844132816Z"
+generated: "2024-10-17T13:09:01.650298654Z"
