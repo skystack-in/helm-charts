@@ -72,8 +72,12 @@ ingress:
   hosts:
     - host: chart-example.local
       paths:
+        - path: /api
+          pathType: ImplementationSpecific
+          port: 500
         - path: /
           pathType: ImplementationSpecific
+          port: 8500
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
